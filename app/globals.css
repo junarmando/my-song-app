@@ -1,26 +1,110 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    --bg: #0a0a0a;
+    --text: #e0e0e0;
+    --accent: #ff3c3c;
+    --dim: #555;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#player-container {
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+    text-transform: uppercase;
+}
+
+.subtitle {
+    color: var(--dim);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+#lyrics-window {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2rem;
+    mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+#lyrics-content {
+    position: absolute;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.lyric-line {
+    font-size: 1.5rem;
+    padding: 5px 0;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+.lyric-line.active {
+    opacity: 1;
+    color: white;
+    transform: scale(1.1);
+}
+
+#controls {
+    margin-top: 2rem;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    background: none;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+button:hover {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 0 15px var(--accent);
+}
+
+button:disabled {
+    border-color: var(--dim);
+    color: var(--dim);
+    cursor: not-allowed;
+}
+
+#visualizer {
+    width: 100%;
+    height: 100px;
+    margin-top: 2rem;
+}
+
+#playback-controls {
+    display: none;
+    gap: 10px;
 }
