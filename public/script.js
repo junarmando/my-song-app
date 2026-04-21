@@ -205,7 +205,12 @@ function singNext(index) {
         lyricsTimeout = setTimeout(() => singNext(index + 1), Math.max(0, delay * 1000));
     }
 
-    window.speechSynthesis.speak(utterance);
+    const bracketRegex = /[\[\]\(\)\{\}]/;  
+
+    if (!bracketRegex.test(lyrics[index].text)) {
+        window.speechSynthesis.speak(utterance);
+    }
+        
 }
 
 function drawVisualizer() {

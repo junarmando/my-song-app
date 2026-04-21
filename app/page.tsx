@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div id="player-container">
-      <h1>BAKAS</h1>
+      <h1>Traces</h1>
       <div className="subtitle">OPM Alt-Rock / Soul-Rock Experience</div>
 
       <div id="lyrics-window">
