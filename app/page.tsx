@@ -18,8 +18,8 @@ export default function Home() {
 
   return (
     <div id="player-container">
-      <h1>Traces</h1>
-      <div className="subtitle">OPM Alt-Rock / Soul-Rock Experience</div>
+      <h1>Future in the Glimmer</h1>
+      <div className="subtitle">Text to speech with a beat.</div>
 
       <div id="lyrics-window">
         <div id="lyrics-content"></div>
